@@ -1,8 +1,10 @@
 #Hello fast life lovers
-this script was made for help people to get his part code html by a simple click .
-#how to work this
-- just place the script folder in your local server root
-- open your index page in your browser and tape the url of targeted web site and submit this
-- the web site hase loaded and  click on the element that you want get her html css 
+Hello fast life people this script made for helping people to get there part of html code with a simple click
 
-"the page will be loaded whitout css this problem come to cross-origin of browser"
+#How it work's
+- Just place the script file in your local server root.
+- Open your index page in your browser and write the targeted website url and submit it.
+- The website has refreshed then click on the element that you want to get her html css.
+- Go to your script folder and you will found a new folder created with a name "files" , there you will found your html css code's files.
+
+The page will be refreshed without css this problem came to cross-origin of browsers.
