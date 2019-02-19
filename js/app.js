@@ -1,5 +1,5 @@
-window.onload = function() {
-
+window.onload = function(eventp) {
+update_path(eventp.target);
 var mark = function(event){
 	if(event.type == 'mouseover')
 		event.target.style.border = '1px solid black';
@@ -75,12 +75,11 @@ var getRulsCss = function(elem){
 };
 
 var update_path = function(elem){
+	var url;
 	if(elem.href){
-		elem.href = elem.href.replace(/localhost/gi, "www.exemple.com"); 
-	}
-	if(elem.src){
-		elem.src = elem.src.replace(/localhost/gi, "www.exemple.com"); 
-	}
+	 	url = elem.href.replace(/localhost/gi, "youtube.com"); 
+		api_request(url,elem) 
+	} 
 
 	if (elem.childNodes) {
 		elem = elem.firstChild;
@@ -92,4 +91,16 @@ var update_path = function(elem){
 
 		}
 	}
+}
+
+var api_request = function(url,element){
+	var file;
+	var http = new XMLHttpRequest(); 
+	http.onreadystatechange = function() { 
+	    if(http.readyState == 4 && http.status == 200) { 
+		 	element.href = "attachment/" + http.responseText;  
+	    } 
+	} 
+	http.open('POST', 'get_css.php', true);   
+	http.send(url); 
 }
